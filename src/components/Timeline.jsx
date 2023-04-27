@@ -1,33 +1,57 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { getDownloadURL,ref } from 'firebase/storage';
-import { storage } from '../config/firebase';
-import { v4 } from 'uuid';
+import { db } from '../config/firebase';
+import { collection , getDocs } from 'firebase/firestore';
+import { docID } from './Form';
 
-const Timeline = ({ img1 , img2}) => {
-    const [image1Url, setImage1Url] = useState('');
-    const [image2Url, setImage2Url] = useState('');
+const Timeline = () => {
+    const [dataFile , setDataFile] = useState([]);
     
-    getDownloadURL(img1).then((url) => {
-        setImage1Url(url);
-        }).catch((error) => {
-        console.log(error);
-        });
+    const dataRef = collection(db, 'userInfo');
 
-    getDownloadURL(img2).then((url) => {
-        setImage2Url(url);
-        }).catch((error) => {
+    useEffect(() => {
+        getData();
+    }, [])
+    
+    
+    const getData = async () => {
+        
+    try {
+        const data = await getDocs(dataRef);
+        const filteredData = data.docs.map((doc) => (
+            {
+                ...doc.data(),
+                id: doc.id,
+            }
+        ))
+        
+        for(let i=0;i<filteredData.length;i++){
+            if(filteredData[i].id === docID){
+                setDataFile(filteredData[i]);
+            }
+        }
+    }catch(error) {
         console.log(error);
-        });
+    }
+    }
+    
+
+   
+    
+
   
     return (
     <div>
-    <p>{name1}</p>
-    <p>{name2}</p>
-    <img src={image1Url} alt='Img 1' />
-    <img src={image2Url} alt='Img 2' />
-    <p>{event1}</p>
-    <p>{event2}</p>
+     <h2>TimeLine</h2>
+    
+    <p>{dataFile.name1}</p>
+    <p>{dataFile.name2}</p>
+    <img src={dataFile.image1} alt='Img 1' />
+    <img src={dataFile.image2} alt='Img 2' />
+    <p>{dataFile.event1}</p>
+    <p>{dataFile.event2}</p>
+    
+    
     </div>
   )
 }
