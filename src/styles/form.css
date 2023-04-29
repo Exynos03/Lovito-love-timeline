@@ -1,7 +1,128 @@
-div {
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 150vh;
+    padding-bottom: 3rem;
+    padding-top: 1.5rem;
+    margin: auto;
+    background-color:  #FDE2F3;
 }
+
+h2{
+    font-size: 2rem;
+    padding: 0.7rem;
+    color: #2A2F4F;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    font-size: 1.4rem;
+    padding-top: 1rem;
+}
+
+input {
+    height: 6vh;
+    border-radius: 8px;
+    border: none;
+    padding-left: 1rem;
+    margin-top: 0.4rem;
+    background-color: #E5BEEC;
+}
+
+.hidden-inpt {
+    height: 6vh;
+    border-radius: 8px;
+    border: dashed 2px #917FB3;
+    margin-top: 0.4rem;
+    background-color: #E5BEEC;
+    transition: 0.2s ease-in-out;
+}
+
+.hidden-inpt-again{
+    height: 5vh;
+    width: 25%;
+    cursor: pointer;
+    color:  #E5BEEC;
+}
+
+.hidden-inpt-again::file-selector-button{
+    height: 5vh;
+    border: none;
+    background-color: #E5BEEC;
+    cursor: pointer;
+}
+
+.date{
+    padding-right: 1rem;
+}
+
+.date:hover {
+    cursor: pointer;
+}
+
+.hidden-inpt-again::file-selector-button:hover{
+    opacity: 0.6;
+}
+
+.hidden-inpt::file-selector-button {
+    height: 6vh;
+    width: 100%;
+    border: none;
+    background-color: #E5BEEC;
+    cursor: pointer;
+}
+
+.hidden-inpt::file-selector-button:hover {
+   opacity: 0.6;
+}
+
+
+.show-file {
+    height: 6vh;
+    border-radius: 8px;
+    border: dashed 2px #917FB3;
+    margin-top: 0.4rem;
+    background-color: #E5BEEC;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+button {
+    width: 14%;
+    height: 7vh;
+    border-radius: 8px;
+    border: none;
+    margin-top: 2rem;
+    background-color: #FDE2F3;
+    color: #FDE2F3;
+    background-color: #917FB3;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1b1e30;
+    color: #FDE2F3;
+}
+
+button:active {
+    opacity: 0.6;
+    color: #FDE2F3;
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    width: 44%;
+    justify-content: space-evenly;
+}
+

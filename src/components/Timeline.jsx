@@ -3,17 +3,21 @@ import { useState } from 'react';
 import { db } from '../config/firebase';
 import { collection , getDocs } from 'firebase/firestore';
 import { docID } from './Form';
+import '../styles/Timeline.css';
+import moment from 'moment/moment';
+
 
 const Timeline = () => {
     const [dataFile , setDataFile] = useState([]);
+   
     
     const dataRef = collection(db, 'userInfo');
 
     useEffect(() => {
         getData();
-    }, [])
+    },[])
     
-    
+
     const getData = async () => {
         
     try {
@@ -35,25 +39,81 @@ const Timeline = () => {
     }
     }
     
+return (
+    <div className='timeline-main'>
+    <div className='timeline-compo'>
+    
+    <div className='upper-div'>
+        <img src={dataFile.image1} className='img-1' alt='Pic 1' />
+        <p className='name-text'>{dataFile.name1} & {dataFile.name2}'s Story</p>
+        <img src={dataFile.image2}  className='img-1' alt='pic 2'/>
+    </div>
 
-   
+    <div className='left-div'>
+        <img src='Group 53448.svg' alt='svg-1' />
+        <div className='align' >
+            <p className='main-text' >{moment(dataFile.event1Date, 'YYYY-MM-DD').format('Do MMMM YYYY')}</p>
+            <p className='left-event-txt' >{dataFile.event1}</p>
+        </div>
+    </div>    
+    <img src='Vector 5.svg' alt='line' className='svg-left-right' />
+    <div className='right-div'>
+        <div className='align' >
+            <p className='main-text' >{moment(dataFile.event2Date, 'YYYY-MM-DD').format('Do MMMM YYYY')}</p>
+            <p className='left-event-txt' >{dataFile.event2}</p>
+        </div>
+        <img src='undraw_people_search_re_5rre.svg' alt='svg-1' />
+    </div> 
+    <img src='Vector 6.svg' alt='line' className='svg-left-right' />
+    <div className='left-div'>
+        <img src='undraw_everywhere_together_re_xe5a 1.svg' alt='svg-1' />
+        <div className='align' >
+            <p className='main-text' >{moment(dataFile.foundDate, 'YYYY-MM-DD').format('Do MMMM YYYY')}</p>
+            <p className='left-event-txt' >We found each other</p>
+        </div>
+    </div> 
+    <img src='Vector 5.svg' alt='line' className='svg-left-right' />
+    <div className='right-div'>
+        <div className='align' >
+            <p className='main-text' >{moment(dataFile.talkDate, 'YYYY-MM-DD').format('Do MMMM YYYY')}</p>
+            <p className='left-event-txt' >We started talking</p>
+        </div>
+        <img src='Group 53426.svg' alt='svg-1' />
+    </div>
+    <img src='Vector 6.svg' alt='line' className='svg-left-right' />
+    <div className='left-div'>
+        <img src='Group.svg' alt='svg-1' />
+        <div className='align' >
+            <p className='main-text' >{moment(dataFile.event3Date, 'YYYY-MM-DD').format('Do MMMM YYYY')}</p>
+            <p className='left-event-txt' >{dataFile.event3}</p>
+        </div>
+    </div>  
+    <img src='Vector 5.svg' alt='line' className='svg-left-right' /> 
+    <div className='right-div'>
+        <div className='align' >
+            <p className='main-text' >{moment(dataFile.fallInLoveDate, 'YYYY-MM-DD').format('Do MMMM YYYY')}</p>
+            <p className='left-event-txt' >Fell in love</p>
+        </div>
+        <img src='Group 53429.svg' alt='svg-1' />
+    </div>
+    <img src='Vector 6.svg' alt='line' className='svg-left-right' />
+    <div className='left-div'>
+        <div className='main-img'>
+            <img src={dataFile.image1} className='img-left'  alt='Pic 1' />
+            <img src={dataFile.image2} className='img-right'  alt='Pic 1' />
+        </div>
+        
+        <div className='align'>
+            <p className='main-text-align'>{dataFile.name1} & {dataFile.name2}</p>
+            <p className='loveto-text'>Loveto for life</p>
+        </div> 
+    </div>  
     
-
-  
-    return (
-    <div>
-     <h2>TimeLine</h2>
-    
-    <p>{dataFile.name1}</p>
-    <p>{dataFile.name2}</p>
-    <img src={dataFile.image1} alt='Img 1' />
-    <img src={dataFile.image2} alt='Img 2' />
-    <p>{dataFile.event1}</p>
-    <p>{dataFile.event2}</p>
-    
-    
+ 
+    </div>
     </div>
   )
 }
 
 export default Timeline
+

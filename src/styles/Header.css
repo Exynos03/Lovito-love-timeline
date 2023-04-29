@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    align-items: center;
+    padding-left: 5rem;
+    height: 6rem;
+    position: sticky;
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    background-color: #E5BEEC;
+}
+
+.header-img {
+    width: 10%;
+    max-width: 80px;
+}
+
+.heading-txt {
+    font-size: 1.5rem;
+    padding: 0.7rem;
+    color: #2A2F4F;
+    font-style: italic;
+}
