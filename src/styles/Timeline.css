@@ -32,6 +32,9 @@
 
 .timeline-main {
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .timeline-compo {
@@ -42,7 +45,9 @@
     flex-direction: column;
     align-items: center;
     background-color: #FDE2F3;
-    padding-bottom: 8rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-top: 1.5rem;
     background-image: url('Group 53453.svg'),
         url('Group 53456.svg'),
@@ -50,40 +55,18 @@
         url('Group 53454.svg'),
         url('Group 53460.svg'),
         url('Group 53453.svg'),
-        
         url('Group 53454.svg'),
         url('Group 53460.svg'),
         url('Group 53453.svg'),
-        
         url('Group 53460.svg'),
         url('Group 53453.svg'),
         url('Group 53456.svg'),
-        
         url('Group 53454.svg'),
         url('Group 53460.svg'),
         url('Group 53453.svg'),
-        
-       
         url('Group 53453.svg'),
-        url('Group 53456.svg'),
-        
-        
-        
-        url('Group 53456.svg'),
-        url('Group 53458.svg'),
-        url('Group 53454.svg'),
-        
-        url('Group 53456.svg'),
-        url('Group 53458.svg'),
-        
         url('Group 53460.svg'),
         url('Group 53453.svg'),
-        
-        url('Group 53453.svg'),
-        url('Group 53456.svg'),
-        url('Group 53458.svg'),
-        url('Group 53454.svg'),
-        
         url('Group 53453.svg'),
         url('Group 53456.svg'),
         url('Group 53458.svg'),
@@ -192,6 +175,11 @@
     margin-left: 1rem;
 }
 
+.btn {
+    margin-bottom: 2rem;
+    background-color: #D01760;
+}
+
 @media screen and (max-width: 600px) {
     .timeline-compo {
         width: 85%;
@@ -218,6 +206,7 @@
         border-top: 3px solid #D01760;
         border-bottom: 3px solid #D01760;
     }
+
 }
 
 @media screen and (min-width: 600px) and (max-width: 1023px) {

@@ -5,7 +5,8 @@ import { collection , getDocs } from 'firebase/firestore';
 import { docID } from './Form';
 import '../styles/Timeline.css';
 import moment from 'moment/moment';
-
+import downloadjs from 'downloadjs';
+import html2canvas from 'html2canvas';
 
 const Timeline = () => {
     const [dataFile , setDataFile] = useState([]);
@@ -38,10 +39,16 @@ const Timeline = () => {
         console.log(error);
     }
     }
+
+    const downloadTimeline = async () => {
+        const canvas = await html2canvas(document.getElementById('timeline'));
+        const dataURL = canvas.toDataURL('image/png');
+        downloadjs(dataURL, 'TImeline.png', 'image/png');
+    }
     
 return (
     <div className='timeline-main'>
-    <div className='timeline-compo'>
+    <div className='timeline-compo' id='timeline'>
     
     <div className='upper-div'>
         <img src={dataFile.image1} className='img-1' alt='Pic 1' />
@@ -109,8 +116,9 @@ return (
         </div> 
     </div>  
     
- 
+    
     </div>
+    <button className='btn' onClick={downloadTimeline}>Download</button>
     </div>
   )
 }
