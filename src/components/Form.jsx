@@ -99,7 +99,10 @@ const Form = () => {
             
             {image1 ?
             <label>
-            Your Image
+            <div className='img-spec'>
+                <p className='field-txt'>Your Image</p>
+                <span>(recommended aspect ratio of image 1:1)</span>
+            </div>
                 <div className='show-file'>
                     <p>{image1.name}</p>
                     <input type="file" className='hidden-inpt-again' required onChange={handleImag1Change}  />
@@ -107,14 +110,20 @@ const Form = () => {
             </label>
             :
             <label>
-            Your Image
+            <div className='img-spec'>
+                <p className='field-txt'>Your Image</p>
+                <span>(recommended aspect ratio of image 1:1)</span>
+            </div>
                 <input type="file" className='hidden-inpt' required onChange={handleImag1Change}  />
             </label>
             }
 
             {image2 ?
             <label>
-            Partner Image
+            <div className='img-spec'>
+                <p className='field-txt'>Partner Image</p>
+                <span>(recommended aspect ratio of image 1:1)</span>
+            </div>
                 <div className='show-file'>
                     <p>{image2.name}</p>
                     <input type="file" className='hidden-inpt-again' required onChange={handleImag2Change}  />
@@ -122,7 +131,10 @@ const Form = () => {
             </label>
             :
             <label>
-            Partner Image
+            <div className='img-spec'>
+                <p className='field-txt'>Partner Image</p>
+                <span>(recommended aspect ratio of image 1:1)</span>
+            </div>    
                 <input type="file" className='hidden-inpt' required onChange={handleImag2Change}  />
             </label>
             }

@@ -4,9 +4,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 150vh;
-    padding-bottom: 3rem;
-    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
     margin: auto;
     background-color:  #FDE2F3;
 }
@@ -23,6 +22,7 @@ label{
     width: 35%;
     font-size: 1.4rem;
     padding-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 input {
@@ -93,6 +93,21 @@ input {
     justify-content: space-evenly;
 }
 
+.img-spec{
+    display: flex;
+    align-items: baseline;
+    column-gap: 6px;
+}
+
+.field-txt {
+    font-size: 1.4rem;
+}
+
+span {
+    font-size: 0.95rem;
+    opacity: 0.5;
+}
+
 button {
     width: 14%;
     height: 7vh;
@@ -126,3 +141,83 @@ button:active {
     justify-content: space-evenly;
 }
 
+@media screen and (max-width: 600px) {
+    label {
+        width: 79%;
+    }
+
+    input {
+        height: 4.8vh;
+    }
+
+    .hidden-inpt {
+        height: 4.8vh;
+    }
+
+    .hidden-inpt::file-selector-button {
+        height: 4.8vh;
+    }
+
+    .hidden-inpt-again {
+        height: 3.8vh;
+    }
+
+    .hidden-inpt-again::file-selector-button{
+        height: 3.8vh;
+    }
+    
+    .show-file {
+        height: 4.8vh;
+    }
+
+    .event {
+        width: 79%;
+        column-gap: 2.4rem;
+    }
+
+    button {
+        width: 30%;
+        height: 5.2vh;
+    }
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    label {
+        width: 60%;
+    }
+
+    input {
+        height: 5.5vh;
+    }
+
+    .hidden-inpt {
+        height: 5.5vh;
+    }
+
+    .hidden-inpt::file-selector-button {
+        height: 5.5vh;
+    }
+
+    .hidden-inpt-again {
+        height: 4.5vh;
+    }
+
+    .hidden-inpt-again::file-selector-button{
+        height: 4.5vh;
+    }
+    
+    .show-file {
+        height: 5.5vh;
+    }
+
+    .event {
+        width: 60%;
+        column-gap: 2.4rem;
+    }
+
+    button {
+        width: 30%;
+        height: 5.5vh;
+    }
+}

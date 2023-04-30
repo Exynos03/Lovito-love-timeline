@@ -45,7 +45,7 @@ return (
     
     <div className='upper-div'>
         <img src={dataFile.image1} className='img-1' alt='Pic 1' />
-        <p className='name-text'>{dataFile.name1} & {dataFile.name2}'s Story</p>
+        <p className='name-text'>When {dataFile.name1} meet {dataFile.name2}</p>
         <img src={dataFile.image2}  className='img-1' alt='pic 2'/>
     </div>
 

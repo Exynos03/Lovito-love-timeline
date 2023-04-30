@@ -5,11 +5,22 @@
     padding: 0;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
-   
 }
 
 .app{
     display: flex;
     flex-direction: column;
     background-color:  #FDE2F3;
+}
+
+@media screen and (max-width: 600px) {
+    * {
+        font-size: 9px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1025px) {
+    * {
+        font-size: 16px;
+    }
 }
