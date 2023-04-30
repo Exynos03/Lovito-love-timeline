@@ -277,3 +277,31 @@
         border-bottom: 3px solid #D01760;
     }
 }
+
+@media screen and (width: 280px) {
+    .timeline-compo {
+        width: 88%;
+    }
+
+    .upper-div{
+        height: 7vh;
+    }
+
+    .img-1 {
+        height: 7.5vh;
+    }
+
+    .img-left {
+        height: 10vh;
+        border-left:3px solid #D01760;
+        border-top: 3px solid #D01760;
+        border-bottom: 3px solid #D01760;
+    }
+
+    .img-right {
+        height: 10vh;
+        border-right: 3px solid #D01760;
+        border-top: 3px solid #D01760;
+        border-bottom: 3px solid #D01760;
+    }
+}
