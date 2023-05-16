@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import '../styles/Form.css'
+import '../styles/form.css'
 import { storage , userInfoRef } from '../config/firebase';
 import { addDoc } from 'firebase/firestore';
 import { ref, uploadBytes , getDownloadURL } from 'firebase/storage';
